@@ -1,75 +1,66 @@
+# 📁 E WEBB Uploads
 
-<h1 align="center">📁 E WEBB UPLOADS</h1>
-
-<p align="center">
-  <a href="http://ewebbcyber.zone.id/" target="_blank">
-    <img src="https://img.shields.io/badge/⬇️%20Download%20Now-007bff?style=for-the-badge&logo=cloudflarepages&logoColor=white" alt="Download Button"/>
-  </a>
-</p>
-
-<p align="center">
-  <strong>Your trusted cloud-based file access hub</strong><br>
-  Easily upload, manage, and download files securely from one modern interface.
-</p>
+> Your public file repository — hosted with ❤️ on GitHub Pages.  
+> Access and download shared files anytime, anywhere.
 
 ---
 
-### 🌐 Live Download Portal
-🔗 **Access your files here:** [http://ewebbcyber.zone.id/](http://ewebbcyber.zone.id/)
+## 🌐 **Access the Files Here**
+
+[![Download Files](https://img.shields.io/badge/🔗_Visit_EWEBB_Uploads-2563eb?style=for-the-badge&logo=google-chrome&logoColor=white)](https://ewebbcyber.github.io/euploads/)
+
+👉 Click the button above or visit:  
+**https://ewebbcyber.github.io/euploads/**
 
 ---
 
-### 🧩 Overview
-**E WEBB UPLOADS** is a modern file-sharing interface built to simplify access to shared files from the **E WEBB Cyber** ecosystem.
+## 🧰 **About This Repository**
 
-It features:
-- 💎 Ultra-modern, responsive design  
-- ⚡ Real-time GitHub file fetching  
-- 🪄 Smart file renaming system with timestamps  
-- 🔗 One-click copyable download links  
-- 🧊 Glassmorphic UI with smooth animations  
+This repository hosts publicly downloadable files managed by **E WEBB Cyber**.  
+The files are automatically listed and made available via the live webpage above.
+
+### Features
+- 🌍 Instant access to all uploaded files  
+- ⚡ Modern, responsive UI for download & copy links  
+- 🕒 Files auto-renamed with timestamps on download  
+- 🔗 Direct GitHub raw links for external access
 
 ---
 
-### 🚀 Technologies Used
+## 🚀 **How It Works**
+
+1. Upload your files directly to this repository (`main` branch).  
+2. The site automatically fetches and displays them at:  
+   👉 [https://ewebbcyber.github.io/euploads/](https://ewebbcyber.github.io/euploads/)  
+3. Visitors can **download** or **copy direct links** instantly.
+
+---
+
+## 🧩 **Tech Stack**
+
 - **HTML5 / CSS3 (Glassmorphism design)**
-- **JavaScript (GitHub API integration)**
-- **Material Icons + Inter Font**
-- **GitHub Pages / Cloudflare Hosting**
+- **JavaScript (Fetch API for dynamic loading)**
+- **GitHub API** for live file listing
+- **GitHub Pages** for hosting
 
 ---
 
-### 🖼️ Preview
-<p align="center">
-  <img src="https://github.com/ewebbcyber/euploads/raw/main/preview.png" width="700" alt="Preview of E WEBB UPLOADS UI"/>
-</p>
+## 💡 **Example Use Cases**
+
+- Hosting downloadable PDFs, images, or reports  
+- Sharing resources with clients or partners  
+- Lightweight public file mirror  
+- Easy file delivery from a GitHub repo
 
 ---
 
-### 💡 How It Works
-1. Files are stored publicly in this repository.  
-2. The live website fetches them dynamically via the GitHub API.  
-3. Each download is automatically renamed to:  
-```
+## 👨‍💻 **Maintained By**
 
-filename_<timestamp>_<randomid>.ext
-
-```
-4. Users can copy direct URLs or download files instantly.
+**E WEBB Cyber**  
+🌐 [ewebbcyber.github.io/euploads](https://ewebbcyber.github.io/euploads/)  
+📧 [Contact via GitHub Issues](https://github.com/ewebbcyber/euploads/issues)
 
 ---
 
-### 📬 Contact
-👨‍💻 Developed & Managed by **E WEBB CYBER**  
-🌐 Website: [http://ewebbcyber.zone.id/](http://ewebbcyber.zone.id/)  
-📧 Email: ewebbcyber@gmail.com  
-
----
-
-<p align="center">
-<sub>© 2025 E WEBB UPLOADS – All rights reserved.</sub>
-</p>
-```
-
----
-
+### 🛠️ License
+This project is released under the **MIT License** — free for personal and commercial use.

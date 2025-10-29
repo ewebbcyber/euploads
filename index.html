@@ -1,111 +1,153 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>E WEBB Uploads</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+
 <style>
+  :root {
+    --primary: #2563eb;
+    --accent: #06b6d4;
+    --bg: #f9fafb;
+    --text: #1f2937;
+    --card-bg: rgba(255, 255, 255, 0.8);
+    --radius: 1rem;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
   body {
-    font-family: 'Inter', sans-serif;
-    background: linear-gradient(135deg, #f6f8fb, #eef2f7);
-    color: #222;
     margin: 0;
-    padding: 0;
+    font-family: 'Inter', sans-serif;
+    color: var(--text);
+    background: linear-gradient(135deg, #e0f2fe, #f9fafb);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
   }
 
   header {
-    background: #1f2937;
-    color: #fff;
-    padding: 2rem 1rem;
+    background: linear-gradient(120deg, var(--primary), var(--accent));
+    color: white;
     text-align: center;
-    border-bottom: 4px solid #00c4b4;
+    padding: 3rem 1rem 2.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    position: relative;
+    overflow: hidden;
+  }
+
+  header::after {
+    content: '';
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 120%;
+    height: 80px;
+    background: white;
+    border-radius: 50%;
+    filter: blur(40px);
+    opacity: 0.4;
   }
 
   header h1 {
-    font-size: 2rem;
-    margin: 0;
-    letter-spacing: 1px;
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.5px;
   }
 
   header p {
-    margin: 0.5rem 0 1rem;
-    color: #d1d5db;
+    font-weight: 400;
+    margin: 0.5rem 0 1.5rem;
+    opacity: 0.9;
   }
 
-  header a.download-btn {
-    display: inline-block;
-    padding: 0.8rem 1.6rem;
-    background: #00c4b4;
-    color: #fff;
-    border-radius: 50px;
+  .main-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: white;
+    color: var(--primary);
     font-weight: 600;
+    padding: 0.75rem 1.5rem;
+    border-radius: 50px;
     text-decoration: none;
-    transition: 0.3s ease;
-    box-shadow: 0 4px 10px rgba(0, 196, 180, 0.3);
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.3);
+    transition: all 0.25s ease;
   }
 
-  header a.download-btn:hover {
-    background: #00a698;
-    box-shadow: 0 4px 20px rgba(0, 196, 180, 0.5);
+  .main-btn:hover {
+    background: var(--accent);
+    color: white;
+    transform: scale(1.05);
+    box-shadow: 0 8px 25px rgba(6, 182, 212, 0.4);
   }
 
   main {
-    max-width: 900px;
-    margin: 2rem auto;
+    flex: 1;
+    max-width: 1000px;
+    margin: 2.5rem auto;
     padding: 0 1rem;
   }
 
   #file-grid {
     display: grid;
-    gap: 1.2rem;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 1.5rem;
   }
 
   .file-card {
-    background: #fff;
-    border-radius: 1rem;
-    padding: 1rem 1.5rem;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+    background: var(--card-bg);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
-    align-items: center;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    transition: all 0.3s ease;
   }
 
   .file-card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    transform: translateY(-4px);
+    box-shadow: 0 6px 25px rgba(0,0,0,0.08);
   }
 
   .file-name {
     font-weight: 600;
-    color: #333;
+    color: var(--primary);
+    font-size: 1.05rem;
+    margin-bottom: 1.2rem;
     word-break: break-all;
   }
 
   .btn-group {
     display: flex;
-    gap: 0.6rem;
+    gap: 0.75rem;
   }
 
   .btn {
+    flex: 1;
     display: flex;
     align-items: center;
-    gap: 0.3rem;
+    justify-content: center;
+    gap: 0.4rem;
+    padding: 0.6rem 1rem;
     border: none;
-    outline: none;
-    padding: 0.5rem 0.9rem;
     border-radius: 8px;
-    font-weight: 500;
     cursor: pointer;
-    transition: all 0.2s ease;
-    font-family: inherit;
+    font-weight: 500;
+    transition: 0.25s ease;
   }
 
   .btn-download {
-    background: #2563eb;
-    color: #fff;
+    background: var(--primary);
+    color: white;
   }
 
   .btn-download:hover {
@@ -113,26 +155,27 @@
   }
 
   .btn-copy {
-    background: #e5e7eb;
+    background: #f3f4f6;
     color: #111827;
   }
 
   .btn-copy:hover {
-    background: #d1d5db;
+    background: #e5e7eb;
   }
 
   .material-symbols-outlined {
     font-size: 18px;
   }
 
+  footer {
+    text-align: center;
+    padding: 1.5rem;
+    font-size: 0.9rem;
+    color: #6b7280;
+  }
+
   @media (max-width: 600px) {
-    .file-card {
-      flex-direction: column;
-      align-items: flex-start;
-    }
-    .btn-group {
-      margin-top: 0.5rem;
-    }
+    header h1 { font-size: 2rem; }
   }
 </style>
 </head>
@@ -140,9 +183,9 @@
 
 <header>
   <h1>📁 E WEBB Uploads</h1>
-  <p>Public file download hub — files are hosted on GitHub and mirrored at:</p>
-  <a class="download-btn" href="http://ewebbcyber.zone.id/" target="_blank">
-    Visit ewebbcyber.zone.id
+  <p>Public file hub hosted at:</p>
+  <a class="main-btn" href="https://ewebbcyber.github.io/euploads/" target="_blank">
+    <span class="material-symbols-outlined">cloud_download</span> Visit ewebbcyber.github.io/euploads/
   </a>
 </header>
 
@@ -152,9 +195,13 @@
   </div>
 </main>
 
+<footer>
+  © 2025 E WEBB Cyber — All Rights Reserved.
+</footer>
+
 <script>
 async function fetchFiles() {
-  const repo = 'ewebbcyber/euploads'; // <-- your GitHub repo
+  const repo = 'ewebbcyber/euploads';
   const apiUrl = `https://api.github.com/repos/${repo}/contents/`;
   const grid = document.getElementById('file-grid');
 
@@ -166,31 +213,26 @@ async function fetchFiles() {
     if (Array.isArray(data)) {
       const files = data.filter(item => item.type === "file" && !item.name.startsWith('.'));
       if (files.length === 0) {
-        grid.innerHTML = "<p>No files found in this repository.</p>";
+        grid.innerHTML = "<p>No files found.</p>";
         return;
       }
 
       grid.innerHTML = "";
-
       files.forEach(file => {
         const card = document.createElement('div');
         card.className = 'file-card';
         card.innerHTML = `
           <div class="file-name">${file.name}</div>
           <div class="btn-group">
-            <button class="btn btn-download">
-              <span class="material-symbols-outlined">download</span>Download
-            </button>
-            <button class="btn btn-copy">
-              <span class="material-symbols-outlined">link</span>Copy URL
-            </button>
+            <button class="btn btn-download"><span class="material-symbols-outlined">download</span>Download</button>
+            <button class="btn btn-copy"><span class="material-symbols-outlined">link</span>Copy URL</button>
           </div>
         `;
 
         const downloadBtn = card.querySelector('.btn-download');
         const copyBtn = card.querySelector('.btn-copy');
 
-        // DOWNLOAD
+        // DOWNLOAD HANDLER
         downloadBtn.addEventListener('click', async () => {
           const timestamp = new Date().toISOString().replace(/[-:.TZ]/g, '');
           const randomId = Math.random().toString(36).substring(2, 8);
@@ -199,8 +241,8 @@ async function fetchFiles() {
           const newName = `${baseName}_${timestamp}_${randomId}.${ext}`;
 
           try {
-            const res = await fetch(file.download_url, { mode: 'cors' });
-            if (!res.ok) throw new Error('CORS blocked or fetch failed');
+            const res = await fetch(file.download_url);
+            if (!res.ok) throw new Error('Fetch failed');
             const blob = await res.blob();
             const url = URL.createObjectURL(blob);
             const a = document.createElement('a');
@@ -208,32 +250,30 @@ async function fetchFiles() {
             a.download = newName;
             document.body.appendChild(a);
             a.click();
-            document.body.removeChild(a);
+            a.remove();
             URL.revokeObjectURL(url);
-          } catch (err) {
-            // PDF / fallback
+          } catch {
             const a = document.createElement('a');
             a.href = file.download_url;
-            a.setAttribute('download', newName);
+            a.download = newName;
             document.body.appendChild(a);
             a.click();
-            document.body.removeChild(a);
+            a.remove();
           }
         });
 
-        // COPY LINK (fixed)
+        // COPY FIXED
         copyBtn.addEventListener('click', async () => {
           try {
-            const rawLink = file.download_url
+            const directLink = file.download_url
               .replace('https://api.github.com/repos/', 'https://raw.githubusercontent.com/')
               .replace('/contents/', '/main/');
-            await navigator.clipboard.writeText(rawLink);
+            await navigator.clipboard.writeText(directLink);
             copyBtn.innerHTML = `<span class="material-symbols-outlined">check</span>Copied!`;
             setTimeout(() => {
               copyBtn.innerHTML = `<span class="material-symbols-outlined">link</span>Copy URL`;
             }, 2000);
-          } catch (err) {
-            console.error('Copy failed:', err);
+          } catch {
             copyBtn.innerHTML = `<span class="material-symbols-outlined">error</span>Failed`;
             setTimeout(() => {
               copyBtn.innerHTML = `<span class="material-symbols-outlined">link</span>Copy URL`;
@@ -245,12 +285,12 @@ async function fetchFiles() {
       });
     }
   } catch (err) {
-    grid.innerHTML = `<p>⚠️ Error loading files: ${err.message}</p>`;
+    grid.innerHTML = `<p>Error loading files: ${err.message}</p>`;
   }
 }
-
 fetchFiles();
 </script>
 
 </body>
 </html>
+
